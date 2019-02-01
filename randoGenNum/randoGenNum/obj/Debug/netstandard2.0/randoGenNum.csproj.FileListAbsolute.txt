@@ -1,0 +1,12 @@
+C:\Users\ZipZash\source\repos\randoGenNum\randoGenNum\randoGenNum\bin\Debug\netstandard2.0\randoGenNum.deps.json
+C:\Users\ZipZash\source\repos\randoGenNum\randoGenNum\randoGenNum\bin\Debug\netstandard2.0\randoGenNum.dll
+C:\Users\ZipZash\source\repos\randoGenNum\randoGenNum\randoGenNum\bin\Debug\netstandard2.0\randoGenNum.pdb
+C:\Users\ZipZash\source\repos\randoGenNum\randoGenNum\randoGenNum\obj\Debug\netstandard2.0\randoGenNum.csprojAssemblyReference.cache
+C:\Users\ZipZash\source\repos\randoGenNum\randoGenNum\randoGenNum\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\ZipZash\source\repos\randoGenNum\randoGenNum\randoGenNum\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+C:\Users\ZipZash\source\repos\randoGenNum\randoGenNum\randoGenNum\obj\Debug\netstandard2.0\randoGenNum.csproj.CoreCompileInputs.cache
+C:\Users\ZipZash\source\repos\randoGenNum\randoGenNum\randoGenNum\obj\Debug\netstandard2.0\randoGenNum.AssemblyInfoInputs.cache
+C:\Users\ZipZash\source\repos\randoGenNum\randoGenNum\randoGenNum\obj\Debug\netstandard2.0\randoGenNum.AssemblyInfo.cs
+C:\Users\ZipZash\source\repos\randoGenNum\randoGenNum\randoGenNum\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\ZipZash\source\repos\randoGenNum\randoGenNum\randoGenNum\obj\Debug\netstandard2.0\randoGenNum.dll
+C:\Users\ZipZash\source\repos\randoGenNum\randoGenNum\randoGenNum\obj\Debug\netstandard2.0\randoGenNum.pdb
