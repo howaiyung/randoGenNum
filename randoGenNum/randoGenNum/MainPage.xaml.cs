@@ -18,6 +18,7 @@ namespace randoGenNum
         {
 
             randomNumList.Text = "";
+            ErrorLabel.Text = "";
 
             var num1 = firstNumEntry.Text;
             var num2 = secondNumEntry.Text;
@@ -25,8 +26,16 @@ namespace randoGenNum
             
             if (int.TryParse(num1, out int nVal1) && int.TryParse(num2, out int nVal2))
             {
-                var randNumArray = GenerateNumbers(nVal1, nVal2);
-                randomNumList.Text = String.Join(",", new List<int>(randNumArray).ConvertAll(i => i.ToString()).ToArray());
+                if(nVal1 < nVal2)
+                {
+                    var randNumArray = GenerateNumbers(nVal1, nVal2);
+                    randomNumList.Text = String.Join(",", new List<int>(randNumArray).ConvertAll(i => i.ToString()).ToArray());
+                }
+                else
+                {
+                    ErrorLabel.Text = "The first number is larger then the second number, please type the first number smaller than the 2nd number or type the 2nd number bigger than the first number.";
+                }
+                
             }
 
             /*
@@ -56,6 +65,7 @@ namespace randoGenNum
         {
             Random r = new Random();
             int arraySize = r.Next(1, 1000);
+
             var randNumArray = new List<int>();
 
             for (int i = 0; i < arraySize; i++)

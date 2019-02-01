@@ -11,11 +11,10 @@
         <Label Text="First number: "
            HorizontalOptions="Start" />
         <Entry x:Name="firstNumEntry" Keyboard="Numeric" />
-        <Label x:Name="ErrorLabelNum1" />
         <Label Text="Second number: "
            HorizontalOptions="Start" />
         <Entry x:Name="secondNumEntry" Keyboard="Numeric" />
-        <Label x:Name="ErrorLabelNum2" />
+        <Label x:Name="ErrorLabel" />
         <Button Text="Generate" Clicked="OnGenerateButtonClicked" />
         <ScrollView Orientation="Vertical">
             <Label x:Name="randomNumList" />
