@@ -16,40 +16,62 @@ namespace randoGenNum
 
         private void OnGenerateButtonClicked(object sender, EventArgs e)
         {
+
+            randomNumList.Text = "";
+
             var num1 = firstNumEntry.Text;
             var num2 = secondNumEntry.Text;
 
+            
+            if (int.TryParse(num1, out int nVal1) && int.TryParse(num2, out int nVal2))
+            {
+                var randNumArray = GenerateNumbers(nVal1, nVal2);
+                randomNumList.Text = String.Join(",", new List<int>(randNumArray).ConvertAll(i => i.ToString()).ToArray());
+            }
+
+            /*
+            
+            Commenting this section out since it seems the input calculator forces the user to enter a integer number
             if(ProveInt(num1) == true)
             {
-                ErrorLabelNum1.Text = "This is a valid integer";
+                ErrorLabelNum1.Text = "The first number is a valid integer";
             }
             else
             {
-                ErrorLabelNum1.Text = "This is a invalid integer";
+                ErrorLabelNum1.Text = "The first number is a invalid integer";
             }
 
             if (ProveInt(num2) == true)
             {
-                ErrorLabelNum2.Text = "This is a valid integer";
+                ErrorLabelNum2.Text = "The second number is a valid integer";
             }
             else
             {
-                ErrorLabelNum2.Text = "This is a invalid integer";
-            }
+                ErrorLabelNum2.Text = "The second number is a invalid integer";
+            }*/
         }
 
-        private int[] GenerateNumbers(int num1, int num2)
+        /* private void GenerateNumbers(int num1, int num2, ref Object A) -- Is this more secure?*/
+        private List<int> GenerateNumbers(int num1, int num2)
         {
-            int[] randNumArray = new int[num1];
+            Random r = new Random();
+            int arraySize = r.Next(1, 1000);
+            var randNumArray = new List<int>();
+
+            for (int i = 0; i < arraySize; i++)
+            {
+                int temp = r.Next(num1, num2);
+                randNumArray.Add(temp);
+                temp = 0;
+            }
 
             return randNumArray;
         }
 
         private bool ProveInt(String num)
         {
-            int nVal = 0;
 
-            if(int.TryParse(num, out nVal))
+            if (int.TryParse(num, out int nVal))
             {
                 return true;
             }

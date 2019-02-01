@@ -17,7 +17,9 @@
         <Entry x:Name="secondNumEntry" Keyboard="Numeric" />
         <Label x:Name="ErrorLabelNum2" />
         <Button Text="Generate" Clicked="OnGenerateButtonClicked" />
-
+        <ScrollView Orientation="Vertical">
+            <Label x:Name="randomNumList" />
+        </ScrollView>
     </StackLayout>
 
         
