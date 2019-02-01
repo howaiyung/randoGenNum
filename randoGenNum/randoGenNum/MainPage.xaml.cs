@@ -14,7 +14,8 @@ namespace randoGenNum
             InitializeComponent();
         }
 
-        private void OnGenerateButtonClicked(object sender, EventArgs e)
+        /*Version 1.0 of this code */
+        /*private void OnGenerateButtonClicked(object sender, EventArgs e)
         {
 
             randomNumList.Text = "";
@@ -36,7 +37,7 @@ namespace randoGenNum
                     ErrorLabel.Text = "The first number is larger then the second number, please type the first number smaller than the 2nd number or type the 2nd number bigger than the first number.";
                 }
                 
-            }
+            }*/
 
             /*
             
@@ -58,10 +59,10 @@ namespace randoGenNum
             {
                 ErrorLabelNum2.Text = "The second number is a invalid integer";
             }*/
-        }
+        /*}*/
 
         /* private void GenerateNumbers(int num1, int num2, ref Object A) -- Is this more secure?*/
-        private List<int> GenerateNumbers(int num1, int num2)
+        /*private List<int> GenerateNumbers(int num1, int num2)
         {
             Random r = new Random();
             int arraySize = r.Next(1, 1000);
@@ -87,6 +88,6 @@ namespace randoGenNum
             }
 
             return false;
-        }
+        }*/
     }
 }

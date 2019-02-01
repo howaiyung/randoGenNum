@@ -2,11 +2,17 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:randoGenNum"
+             xmlns:viewModels="clr-namespace:randoGenNum.ViewModels"
              x:Class="randoGenNum.MainPage">
 
+    <ContentPage.BindingContext>
+        <viewModels:RandomNumberViewModel />
+    </ContentPage.BindingContext>
+    
     <StackLayout>
         <!-- Place new controls here -->
-        <Label Text="Welcome to my number generator app!" 
+       <!-- Version 1.0 for the code -->
+       <!-- <Label Text="Welcome to my number generator app!" 
            HorizontalOptions="Center" />
         <Label Text="First number: "
            HorizontalOptions="Start" />
@@ -18,7 +24,28 @@
         <Button Text="Generate" Clicked="OnGenerateButtonClicked" />
         <ScrollView Orientation="Vertical">
             <Label x:Name="randomNumList" />
+        </ScrollView> -->
+
+        <Label Text="Welcome to my number generator app!" 
+           HorizontalOptions="Center" />
+        <Label Text="First number: " 
+               HorizontalOptions="Start" />
+        <Entry FontSize="40"
+               Text="{Binding RandNum1}" />
+        <Label Text="Second number: " 
+               HorizontalOptions="Start" />
+        <Entry FontSize="40" 
+               Text="{Binding RandNum2}" />
+
+        <Button Text="Generate" 
+                TextColor="White"
+                BackgroundColor="Blue"
+                Command="{Binding CreateNumListCommand}" />
+
+        <ScrollView Orientation="Vertical">
+            <Label Text="{Binding RandNumList}" />
         </ScrollView>
+        
     </StackLayout>
 
         
