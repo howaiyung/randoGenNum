@@ -14,15 +14,15 @@
 
         <Label Text="Welcome to my number generator app!" 
            HorizontalOptions="Center" />
+        
         <Label Text="First number: " 
                HorizontalOptions="Start" />
-        <Entry FontSize="40" 
-               Keyboard="Numeric"
+        <Entry Keyboard="Numeric"
                Text="{Binding RandNum1}" />
+        
         <Label Text="Second number: " 
                HorizontalOptions="Start" />
-        <Entry FontSize="40"
-               Keyboard="Numeric"
+        <Entry Keyboard="Numeric"
                Text="{Binding RandNum2}" />
 
         <Button Text="Generate" 

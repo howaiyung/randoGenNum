@@ -69,7 +69,7 @@ namespace randoGenNum.ViewModels
                 {
 
                     Random r = new Random();
-                    int arraySize = r.Next(1, 1000);
+                    int arraySize = r.Next(1, 10);
 
                     var randNumArray = new List<int>();
 
@@ -81,11 +81,26 @@ namespace randoGenNum.ViewModels
                     }
 
                     RandNumList = randNumArray;
-                    StringNumList = String.Join(",", new List<int>(randNumArray).ConvertAll(i => i.ToString()).ToArray());
+                    StringNumList = string.Join(",", new List<int>(_randNumList).ConvertAll(i => i.ToString()).ToArray());
 
                 });
             }
         }
+
+        /*
+        
+        I was trying to convert the string version into a command so it can be called from MainPage.xaml
+        But there is no trigger with the button so I could create this a function to be called upon by CreateNumList
+        public ICommand CreateStringListCommand
+        {
+            get
+            {
+                return new Command(() =>
+                {
+                    StringNumList = string.Join(",", new List<int>(_randNumList).ConvertAll(i => i.ToString()).ToArray());
+                });
+            }
+        }*/
 
         public event PropertyChangedEventHandler PropertyChanged;
 
