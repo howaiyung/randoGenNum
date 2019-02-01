@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,11 +12,12 @@ namespace randoGenNum.ViewModels
 {
     public class RandomNumberViewModel : INotifyPropertyChanged
     {
-        public event PropertyChangedEventHandler PropertyChanged;
+        
 
         private int _randNum1;
         private int _randNum2;
         private List<int> _randNumList;
+        private string _stringNumList;
 
         public int RandNum1
         {
@@ -24,7 +26,7 @@ namespace randoGenNum.ViewModels
             set
             {
                 _randNum1 = value;
-                OnPropertyChange();
+                OnPropertyChanged();
             }
         }
 
@@ -35,7 +37,7 @@ namespace randoGenNum.ViewModels
             set
             {
                 _randNum2 = value;
-                OnPropertyChange();
+                OnPropertyChanged();
             }
         }
 
@@ -45,7 +47,17 @@ namespace randoGenNum.ViewModels
             set
             {
                 _randNumList = value;
-                OnPropertyChange();
+                OnPropertyChanged();
+            }
+        }
+
+        public string StringNumList
+        {
+            get { return _stringNumList; }
+            set
+            {
+                _stringNumList = value;
+                OnPropertyChanged();
             }
         }
 
@@ -69,16 +81,13 @@ namespace randoGenNum.ViewModels
                     }
 
                     RandNumList = randNumArray;
+                    StringNumList = String.Join(",", new List<int>(randNumArray).ConvertAll(i => i.ToString()).ToArray());
 
                 });
             }
         }
 
-
-        private void OnPropertyChange()
-        {
-            throw new NotImplementedException();
-        }
+        public event PropertyChangedEventHandler PropertyChanged;
 
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {

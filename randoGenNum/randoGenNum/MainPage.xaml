@@ -9,32 +9,20 @@
         <viewModels:RandomNumberViewModel />
     </ContentPage.BindingContext>
     
-    <StackLayout>
-        <!-- Place new controls here -->
-       <!-- Version 1.0 for the code -->
-       <!-- <Label Text="Welcome to my number generator app!" 
-           HorizontalOptions="Center" />
-        <Label Text="First number: "
-           HorizontalOptions="Start" />
-        <Entry x:Name="firstNumEntry" Keyboard="Numeric" />
-        <Label Text="Second number: "
-           HorizontalOptions="Start" />
-        <Entry x:Name="secondNumEntry" Keyboard="Numeric" />
-        <Label x:Name="ErrorLabel" />
-        <Button Text="Generate" Clicked="OnGenerateButtonClicked" />
-        <ScrollView Orientation="Vertical">
-            <Label x:Name="randomNumList" />
-        </ScrollView> -->
+    <StackLayout Orientation="Vertical">
+
 
         <Label Text="Welcome to my number generator app!" 
            HorizontalOptions="Center" />
         <Label Text="First number: " 
                HorizontalOptions="Start" />
-        <Entry FontSize="40"
+        <Entry FontSize="40" 
+               Keyboard="Numeric"
                Text="{Binding RandNum1}" />
         <Label Text="Second number: " 
                HorizontalOptions="Start" />
-        <Entry FontSize="40" 
+        <Entry FontSize="40"
+               Keyboard="Numeric"
                Text="{Binding RandNum2}" />
 
         <Button Text="Generate" 
@@ -43,7 +31,7 @@
                 Command="{Binding CreateNumListCommand}" />
 
         <ScrollView Orientation="Vertical">
-            <Label Text="{Binding RandNumList}" />
+            <Label Text="{Binding StringNumList}" />
         </ScrollView>
         
     </StackLayout>
