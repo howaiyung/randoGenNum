@@ -35,6 +35,8 @@ namespace randoGenNum.ViewModels
             get { return _randNum1; }
             set
             {
+                BGColor1 = "Transparent";
+                ErrorMessage = "";
                 _randNum1 = value;
                 OnPropertyChanged();
             }
@@ -56,6 +58,8 @@ namespace randoGenNum.ViewModels
             get { return _randNum2; }
             set
             {
+                BGColor2 = "Transparent";
+                ErrorMessage = "";
                 _randNum2 = value;
                 OnPropertyChanged();
             }
@@ -117,8 +121,15 @@ namespace randoGenNum.ViewModels
 
                         if ((Int32.TryParse(_randNum1, out tempNum1)) && Int32.TryParse(_randNum2, out tempNum2))
                         {
+                            if(tempNum1 > tempNum2)
+                            {
+                                int tempNum = tempNum1;
+                                tempNum1 = tempNum2;
+                                tempNum2 = tempNum;
+                            }
+
                             Random r = new Random();
-                            int arraySize = r.Next(1, 10);
+                            int arraySize = r.Next(10, 50);
 
                             var randNumArray = new List<int>();
 
@@ -136,8 +147,6 @@ namespace randoGenNum.ViewModels
                         {
                             DisplayErrors();
                         }
-                        
-                        
 
                     }
                     else
@@ -168,7 +177,7 @@ namespace randoGenNum.ViewModels
                 BGColor2 = "Transparent";
             }
 
-            ErrorMessage = "Invalid value(s). Please type in integers for both entries.";
+            ErrorMessage = "Invalid value(s). Please type in integers.";
         }
 
         private bool GetValidation(string strNum)

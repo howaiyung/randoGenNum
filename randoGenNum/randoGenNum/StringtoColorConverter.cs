@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Globalization;
 using Xamarin.Forms;
 
@@ -18,10 +16,6 @@ namespace randoGenNum
                     case (""):
                     {
                         return Color.Default;
-                    }
-                    case ("Accent"):
-                    {
-                        return Color.Accent;
                     }
                     case ("Red"):
                     {
@@ -44,7 +38,7 @@ namespace randoGenNum
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            return null;
+            return Color.Transparent;
         }
     }
 
