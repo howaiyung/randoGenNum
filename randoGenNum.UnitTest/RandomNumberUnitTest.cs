@@ -11,8 +11,12 @@ namespace randoGenNum.UnitTest
         public void RandNumListTest()
         {
             var vm = new RandomNumberViewModel();
+            vm.RandNum1 = "4";
+            vm.RandNum2 = "20";
 
+            vm.CreateNumListCommand.Execute(null);
 
+            Assert.IsTrue(vm.StringNumList != "","This should have generated a string integer list");
         }
     }
 }

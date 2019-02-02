@@ -12,7 +12,6 @@ namespace randoGenNum
         public MainPage()
         {
             InitializeComponent();
-
         }
 
        

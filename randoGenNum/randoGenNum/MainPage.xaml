@@ -3,20 +3,34 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:randoGenNum"
              xmlns:viewModels="clr-namespace:randoGenNum.ViewModels"
-             x:Class="randoGenNum.MainPage">
+             x:Class="randoGenNum.MainPage" >
 
     <ContentPage.BindingContext>
         <viewModels:RandomNumberViewModel />
     </ContentPage.BindingContext>
-
+    
+    <!--
+        Importing a file called StringToColorConverter that helps
+        convert the updated attributes into color for a particular
+        element.
+    -->
     <ContentPage.Resources>
         <ResourceDictionary>
             <local:StringToColorConverter x:Key="strToColor" />
         </ResourceDictionary>
     </ContentPage.Resources>
     
+    <!-- Decided to use a grid system to make it look nicer.
+         Wanted to add a background to this app to make it look nicer
+         not enough time.
+         A few things to note:
+         -For the Entry elements, the two way binding for the background color property
+          calls the resource strToColor whenever something has changed for the BGColor attribuets.
+         -Used a scroll view for the results. More of a design choice then anything.
+    -->
     
     <ContentPage.Content>
+        
         <Grid x:Name="controlGrid">
             <Grid.ColumnDefinitions >
                 <ColumnDefinition Width="1" />
@@ -35,124 +49,50 @@
             </Grid.RowDefinitions>
 
             <Label Text="Welcome to my number generator!"
-                   HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
-                   Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5"/>
-            
-            <Label Text="1st Number:" 
-                   VerticalTextAlignment ="Center" HorizontalTextAlignment="End"
-                   Grid.Row="1" Grid.Column="1" />
+                HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
+                Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5"/>
 
-            <Entry Keyboard="Numeric" x:Name="Num1EntryBox" Text="{Binding RandNum1}"
-                   BackgroundColor="{Binding BGColor1, Converter={StaticResource strToColor}}"
-                   VerticalOptions="Center"
-                   Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2"/>
+            <Label Text="1st Number:" 
+                VerticalTextAlignment ="Center" HorizontalTextAlignment="End"
+                Grid.Row="1" Grid.Column="1" />
+
+            <Entry x:Name="Num1EntryBox" Keyboard="Numeric" Text="{Binding RandNum1}"
+                BackgroundColor="{Binding BGColor1, Converter={StaticResource strToColor}}"
+                VerticalOptions="Center"
+                Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2"/>
 
             <Label Text="2nd Number:" 
-                   VerticalTextAlignment ="Center" HorizontalTextAlignment="End"
-                   Grid.Row="2" Grid.Column="1" />
+                VerticalTextAlignment ="Center" HorizontalTextAlignment="End"
+                Grid.Row="2" Grid.Column="1" />
 
-            <Entry Keyboard="Numeric" x:Name="Num2EntryBox" Text="{Binding RandNum2}"
-                   BackgroundColor="{Binding BGColor2, Converter={StaticResource strToColor}}"
-                   VerticalOptions="Center"
-                   Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2"/>
+            <Entry x:Name="Num2EntryBox" Keyboard="Numeric" Text="{Binding RandNum2}"
+                BackgroundColor="{Binding BGColor2, Converter={StaticResource strToColor}}"
+                VerticalOptions="Center"
+                Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2"/>
 
             <Button x:Name="GenerateNumList"
-                    Text="Generate"
-                    FontSize="Micro"
-                    TextColor="White"
-                    BackgroundColor="Blue"
-                    VerticalOptions="Center"
-                    Command="{Binding CreateNumListCommand}"
-                    Grid.Row="3" Grid.Column="3" />
-
-            <Label x:Name="ErrorMessageLabel"
-                   Text="{Binding ErrorMessage}"
-                   FontSize="Micro"
-                   VerticalTextAlignment ="Center" HorizontalTextAlignment="Center"
-                   Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="3"/>
-
-            <ScrollView Orientation="Vertical"
-                        Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="3">
-                <Label Text="{Binding StringNumList}" />
-            </ScrollView>
-            <!-- <Label Text="Welcome to my number generator"
-                   HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
-                   Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4"/>
-
-            <StackLayout Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Orientation="Horizontal">
-                <Label Text="First number:" 
-                       VerticalTextAlignment ="Start" />
-
-                <Entry Keyboard="Numeric" x:Name="Num1EntryBox" Text="{Binding RandNum1}"
-                       BackgroundColor="{Binding BGColor1, Converter={StaticResource strToColor}}" />
-            </StackLayout> -->
-            <!--
-            <Label Text="Welcome to my number generator app!" Grid.Row="0"
-                   HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
-                   HorizontalOptions="Center" VerticalOptions="Center"
-                   Grid.Column="0" Grid.ColumnSpan="6"/>
-
-            <StackLayout Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" Orientation="Horizontal">
-                <StackLayout HorizontalOptions="StartAndExpand"></StackLayout>
-                <Label Text="First number:" 
-                       VerticalTextAlignment ="Start"
-                       Grid.Column="1" Grid.ColumnSpan="1" />
-                <Entry Keyboard="Numeric" x:Name="Num1EntryBox" Text="{Binding RandNum1}"
-                       BackgroundColor="{Binding BGColor1, Converter={StaticResource strToColor}}"
-                       VerticalOptions="Center"  HorizontalTextAlignment="Start"/>
-            </StackLayout>
-
-            <StackLayout Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3" Orientation="Horizontal">
-                <StackLayout HorizontalOptions="StartAndExpand"></StackLayout>
-                <Label Text="Second number:" 
-                       VerticalTextAlignment ="Center"
-                       Grid.Column="1" Grid.ColumnSpan="1" />
-                <Entry Keyboard="Numeric" x:Name="Num2EntryBox" Text="{Binding RandNum2}"
-                       BackgroundColor="{Binding BGColor2, Converter={StaticResource strToColor}}"
-                       VerticalOptions="LayoutOptions.CenterAndExpand"  
-                       HorizontalOptions="LayoutOptions.FillAndExpand"/>
-            </StackLayout>
-            
-            -->
-        </Grid>
-        
-    </ContentPage.Content>
-            <!-- <StackLayout Orientation="Vertical">
-
-
-        <Label Text="Welcome to my number generator app!" 
-           HorizontalOptions="Center" />
-
-        <Label Text="First number: " 
-               HorizontalOptions="Start" />
-        <Entry Keyboard="Numeric"
-               x:Name="Num1EntryBox"
-               Text="{Binding RandNum1}"
-               BackgroundColor="{Binding BGColor1, Converter={StaticResource strToColor}}"/>
-    
-        <Label Text="Second number: " 
-               HorizontalOptions="Start" />
-        <Entry Keyboard="Numeric"
-               x:Name="Num2EntryBox" 
-               Text= "{Binding RandNum2}"
-               BackgroundColor="{Binding BGColor2, Converter={StaticResource strToColor}}"/>
-
-        <Label x:Name="ErrorMessageLabel"
-               Text="{Binding ErrorMessage}"/>
-
-        <Button x:Name="GenerateNumList"
-                Text="Generate" 
+                Text="Generate"
+                FontSize="Micro"
                 TextColor="White"
                 BackgroundColor="Blue"
-                Command="{Binding CreateNumListCommand}" />
+                VerticalOptions="Center"
+                Command="{Binding CreateNumListCommand}"
+                Grid.Row="3" Grid.Column="3" />
 
-        <ScrollView Orientation="Vertical">
-            <Label Text="{Binding StringNumList}" />
-        </ScrollView>
+            <Label x:Name="ErrorMessageLabel"
+                Text="{Binding ErrorMessage}"
+                FontSize="Micro"
+                VerticalTextAlignment ="Center" HorizontalTextAlignment="Center"
+                Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="3"/>
+
+            <ScrollView Orientation="Vertical"
+                    Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="3">
+                <Label x:Name="ResultsLabel" 
+                       Text="{Binding StringNumList}" />
+            </ScrollView>
+
+        </Grid>
+
+    </ContentPage.Content>
         
-    </StackLayout>-->
-
-        
-
-
 </ContentPage>
