@@ -7,6 +7,6 @@ C:\Users\ZipZash\source\repos\randoGenNum\randoGenNum\randoGenNum\obj\Debug\nets
 C:\Users\ZipZash\source\repos\randoGenNum\randoGenNum\randoGenNum\obj\Debug\netstandard2.0\randoGenNum.csproj.CoreCompileInputs.cache
 C:\Users\ZipZash\source\repos\randoGenNum\randoGenNum\randoGenNum\obj\Debug\netstandard2.0\randoGenNum.AssemblyInfoInputs.cache
 C:\Users\ZipZash\source\repos\randoGenNum\randoGenNum\randoGenNum\obj\Debug\netstandard2.0\randoGenNum.AssemblyInfo.cs
-C:\Users\ZipZash\source\repos\randoGenNum\randoGenNum\randoGenNum\obj\Debug\netstandard2.0\XamlC.stamp
 C:\Users\ZipZash\source\repos\randoGenNum\randoGenNum\randoGenNum\obj\Debug\netstandard2.0\randoGenNum.dll
 C:\Users\ZipZash\source\repos\randoGenNum\randoGenNum\randoGenNum\obj\Debug\netstandard2.0\randoGenNum.pdb
+C:\Users\ZipZash\source\repos\randoGenNum\randoGenNum\randoGenNum\obj\Debug\netstandard2.0\XamlC.stamp

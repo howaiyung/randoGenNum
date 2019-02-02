@@ -1,4 +1,9 @@
+CommonServiceLocator
+FluentValidation
 FormsViewGroup
+GalaSoft.MvvmLight
+GalaSoft.MvvmLight.Extras
+GalaSoft.MvvmLight.Platform
 randoGenNum
 System.Runtime
 Xamarin.Android.Arch.Core.Common
@@ -25,3 +30,7 @@ Xamarin.Forms.Platform.Android
 Xamarin.Forms.Platform
 Xamarin.Forms.Xaml
 netstandard
+System.ComponentModel.Annotations
+System.Resources.ResourceManager
+System.ComponentModel
+System.Reflection.Extensions

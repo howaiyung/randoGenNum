@@ -38,5 +38,6 @@
     <Pkgruntime_win10-arm_Microsoft_Net_Native_Compiler Condition=" '$(Pkgruntime_win10-arm_Microsoft_Net_Native_Compiler)' == '' ">C:\Users\ZipZash\.nuget\packages\runtime.win10-arm.microsoft.net.native.compiler\2.1.8</Pkgruntime_win10-arm_Microsoft_Net_Native_Compiler>
     <PkgMicrosoft_Net_UWPCoreRuntimeSdk Condition=" '$(PkgMicrosoft_Net_UWPCoreRuntimeSdk)' == '' ">C:\Users\ZipZash\.nuget\packages\microsoft.net.uwpcoreruntimesdk\2.1.2</PkgMicrosoft_Net_UWPCoreRuntimeSdk>
     <PkgMicrosoft_Net_Native_Compiler Condition=" '$(PkgMicrosoft_Net_Native_Compiler)' == '' ">C:\Users\ZipZash\.nuget\packages\microsoft.net.native.compiler\2.1.8</PkgMicrosoft_Net_Native_Compiler>
+    <PkgMvvmLight Condition=" '$(PkgMvvmLight)' == '' ">C:\Users\ZipZash\.nuget\packages\mvvmlight\5.4.1.1</PkgMvvmLight>
   </PropertyGroup>
 </Project>

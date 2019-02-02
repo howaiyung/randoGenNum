@@ -8,24 +8,56 @@
     <ContentPage.BindingContext>
         <viewModels:RandomNumberViewModel />
     </ContentPage.BindingContext>
-    
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:StringToColorConverter x:Key="strToColor" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
     <StackLayout Orientation="Vertical">
 
 
         <Label Text="Welcome to my number generator app!" 
            HorizontalOptions="Center" />
-        
+
         <Label Text="First number: " 
                HorizontalOptions="Start" />
         <Entry Keyboard="Numeric"
-               Text="{Binding RandNum1}" />
-        
+               x:Name="Num1EntryBox"
+               Text="{Binding RandNum1}"/>
+        <!--<Entry Keyboard="Numeric"
+               Text="{Binding RandNum1}"
+               x:Name="num1EntryBox">
+            <Entry.Behaviors>
+                <behaviors:NumValidationBehavior />
+            </Entry.Behaviors>
+        </Entry> -->
+
+
+
         <Label Text="Second number: " 
                HorizontalOptions="Start" />
         <Entry Keyboard="Numeric"
-               Text="{Binding RandNum2}" />
+               x:Name="Num2EntryBox" 
+               Text= "{Binding RandNum2}"
+               BackgroundColor="{Binding BGColor2, Converter={StaticResource strToColor}}"/>
+        
+        <!-- <Entry Keyboard="Numeric"
+               Text="{Binding RandNum2}" 
+               x:Name="num2EntryBox">
+            <Entry.Behaviors>
+                <behaviors:NumValidationBehavior />
+            </Entry.Behaviors>
+        </Entry> -->
 
-        <Button Text="Generate" 
+        
+        
+
+        <Label x:Name="ErrorMessageLabel" />
+
+        <Button x:Name="GenerateNumList"
+                Text="Generate" 
                 TextColor="White"
                 BackgroundColor="Blue"
                 Command="{Binding CreateNumListCommand}" />
