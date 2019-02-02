@@ -10,7 +10,7 @@ namespace randoGenNum
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            if(value != null)
+            if (value != null)
             {
                 string valueAsString = value.ToString();
                 switch (valueAsString)
@@ -23,6 +23,14 @@ namespace randoGenNum
                     {
                         return Color.Accent;
                     }
+                    case ("Red"):
+                    {
+                        return Color.Red;
+                    }
+                    case ("Transparent"):
+                    {
+                        return Color.Transparent;
+                    }
                     default:
                     {
                         return Color.FromHex(value.ToString());
@@ -31,7 +39,7 @@ namespace randoGenNum
             }
 
             return Color.Transparent;
-            
+
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
@@ -40,5 +48,5 @@ namespace randoGenNum
         }
     }
 
-        
+
 }

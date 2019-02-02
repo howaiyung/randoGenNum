@@ -25,36 +25,18 @@
                HorizontalOptions="Start" />
         <Entry Keyboard="Numeric"
                x:Name="Num1EntryBox"
-               Text="{Binding RandNum1}"/>
-        <!--<Entry Keyboard="Numeric"
                Text="{Binding RandNum1}"
-               x:Name="num1EntryBox">
-            <Entry.Behaviors>
-                <behaviors:NumValidationBehavior />
-            </Entry.Behaviors>
-        </Entry> -->
-
-
-
+               BackgroundColor="{Binding BGColor1, Converter={StaticResource strToColor}}"/>
+    
         <Label Text="Second number: " 
                HorizontalOptions="Start" />
         <Entry Keyboard="Numeric"
                x:Name="Num2EntryBox" 
                Text= "{Binding RandNum2}"
                BackgroundColor="{Binding BGColor2, Converter={StaticResource strToColor}}"/>
-        
-        <!-- <Entry Keyboard="Numeric"
-               Text="{Binding RandNum2}" 
-               x:Name="num2EntryBox">
-            <Entry.Behaviors>
-                <behaviors:NumValidationBehavior />
-            </Entry.Behaviors>
-        </Entry> -->
 
-        
-        
-
-        <Label x:Name="ErrorMessageLabel" />
+        <Label x:Name="ErrorMessageLabel"
+               Text="{Binding ErrorMessage}"/>
 
         <Button x:Name="GenerateNumList"
                 Text="Generate" 

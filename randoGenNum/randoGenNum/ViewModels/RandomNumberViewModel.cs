@@ -25,14 +25,9 @@ namespace randoGenNum.ViewModels
         private string _stringNumList;
         private string _errorMessage;
 
-        private string _Entry1Color;
-        private string _Entry2Color;
+        private string _EntryColor1;
+        private string _EntryColor2;
 
-        private static RandomNumberViewModel _instance;
-        public static RandomNumberViewModel Instance
-        {
-            get { return _instance ?? (_instance = new RandomNumberViewModel()); }
-        }
 
         public string RandNum1
         {
@@ -45,37 +40,37 @@ namespace randoGenNum.ViewModels
             }
         }
 
+        public string BGColor1
+        {
+            get { return _EntryColor1; }
+            set
+            {
+                _EntryColor1 = value;
+                OnPropertyChanged();
+            }
+        }
+
         public string RandNum2
         {
 
             get { return _randNum2; }
             set
             {
-                if (GetValidation(value))
-                {
-                    _Entry2Color = "Transparent";
-                }
-                else
-                {
-                    _Entry2Color = "Red";
-                }
-
                 _randNum2 = value;
                 OnPropertyChanged();
-                //OnPropertyChanged(BGColor2);
             }
         }
+
 
         public string BGColor2
         {
-            get { return _Entry2Color;  }
+            get { return _EntryColor2; }
             set
             {
+                _EntryColor2 = value;
                 OnPropertyChanged();
-                OnPropertyChanged(RandNum2);
             }
         }
-
 
 
         public List<int> RandNumList
@@ -93,8 +88,6 @@ namespace randoGenNum.ViewModels
             get { return _stringNumList; }
             set
             {
-                
-                
                 _stringNumList = value;
                 OnPropertyChanged();
             }
@@ -116,9 +109,7 @@ namespace randoGenNum.ViewModels
             {
                 return new Command(() =>
                 {
-
                     
-
                     if (GetValidation(_randNum1) && GetValidation(_randNum2))
                     {
                         int tempNum1 = 0;
@@ -143,17 +134,41 @@ namespace randoGenNum.ViewModels
                         }
                         else
                         {
-                            if (!(GetValidation(_randNum2)))
-                            {
-                                _Entry2Color = "Red";
-                            }
+                            DisplayErrors();
                         }
+                        
                         
 
                     }
-
+                    else
+                    {
+                        DisplayErrors();
+                    }
                 });
             }
+        }
+
+        private void DisplayErrors()
+        {
+            if (!(GetValidation(_randNum1)))
+            {
+                BGColor1 = "Red";
+            }
+            else
+            {
+                BGColor1 = "Transparent";
+            }
+
+            if (!(GetValidation(_randNum2)))
+            {
+                BGColor2 = "Red";
+            }
+            else
+            {
+                BGColor2 = "Transparent";
+            }
+
+            ErrorMessage = "Invalid value(s). Please type in integers for both entries.";
         }
 
         private bool GetValidation(string strNum)
