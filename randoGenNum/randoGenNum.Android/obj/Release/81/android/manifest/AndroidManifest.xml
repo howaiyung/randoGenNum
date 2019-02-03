@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionName="1.1.0" package="com.companyname.randoGenNum" android:installLocation="auto" android:versionCode="6">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionName="1.1.0" package="com.companyname.randoGenNum" android:installLocation="auto" android:versionCode="7">
   <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="27" />
   <uses-permission android:name="android.permission.INTERNET" />
   <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-  <application android:label="randoGenNum.Android" android:icon="@mipmap/launcher_foreground" android:debuggable="false" android:name="android.app.Application" android:allowBackup="true">
+  <application android:label="randoGenNum.Android" android:icon="@mipmap/icon" android:debuggable="false" android:name="android.app.Application" android:allowBackup="true">
     <activity android:configChanges="orientation|screenSize" android:icon="@mipmap/icon" android:label="randoGenNum" android:theme="@style/MainTheme" android:name="md59259f397082e62e27ebaf53479a995af.MainActivity">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionName="1.1.0" package="com.companyname.randoGenNum" android:installLocation="auto" android:versionCode="6">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionName="1.1.0" package="com.companyname.randoGenNum" android:installLocation="auto" android:versionCode="7">
 	<uses-sdk android:minSdkVersion="21" android:targetSdkVersion="27" />
-	<application android:label="randoGenNum.Android" android:icon="@mipmap/launcher_foreground"></application>
+	<application android:label="randoGenNum.Android" android:icon="@mipmap/icon"></application>
 </manifest>
