@@ -2,7 +2,6 @@
 
 Welcome to my first foray into developing a project with Xamarin. It was an interesting but tough experience I had, learning ad hoc to get the basic features and requirements done. 
 
-
 This application takes in 2 integer numbers and creates a random list of integers at the bottom of the screen.
 
 # Features
@@ -11,5 +10,5 @@ This application takes in 2 integer numbers and creates a random list of integer
   - Basic error detection for user input. The entry boxes glow red if the user entered not an integer.
   
  # Missing
-   -Unit testing. Unfortuneatly I keep running in errors due to the unit testing cannot load the Xamarin.Form.Core file.
+   -Unit testing. Unfortunately I keep running in errors due to the unit testing cannot load the Xamarin.Form.Core file.
    Something has to do with the config and app files.
