@@ -8,7 +8,7 @@ This application takes in 2 integer numbers and creates a random list of integer
   - 2 boxes to enter the integers in
   - A scrollable window so you can scroll through all the randomly generate integers.
   - Basic error detection for user input. 
-    -The entry boxes glow red if the user's input is not an integer once the Generate button is pushed.
+    a) The entry boxes glow red if the user's input is not an integer once the Generate button is pushed.
   
  # Missing
    -Unit testing. Unfortunately I keep running in errors due to the unit testing cannot load the Xamarin.Form.Core file.
