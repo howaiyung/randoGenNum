@@ -44,6 +44,7 @@
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
                 <RowDefinition Height="20" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
@@ -69,7 +70,16 @@
                 BackgroundColor="{Binding BGColor2, Converter={StaticResource strToColor}}"
                 VerticalOptions="Center"
                 Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2"/>
-
+            
+            <Label Text="Number of rolls:" 
+                VerticalTextAlignment ="Center" HorizontalTextAlignment="End"
+                Grid.Row="3" Grid.Column="1" />
+            
+            <Entry x:Name="RollsEntryBox" Keyboard="Numeric" Text="{Binding NumRolls}"
+                BackgroundColor="{Binding BGColor3, Converter={StaticResource strToColor}}"
+                VerticalOptions="Center"
+                Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="2"/>
+            
             <Button x:Name="GenerateNumList"
                 Text="Generate"
                 FontSize="Micro"
@@ -77,16 +87,16 @@
                 BackgroundColor="Blue"
                 VerticalOptions="Center"
                 Command="{Binding CreateNumListCommand}"
-                Grid.Row="3" Grid.Column="3" />
+                Grid.Row="4" Grid.Column="3" />
 
             <Label x:Name="ErrorMessageLabel"
                 Text="{Binding ErrorMessage}"
                 FontSize="Micro"
                 VerticalTextAlignment ="Center" HorizontalTextAlignment="Center"
-                Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="3"/>
+                Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="3"/>
 
             <ScrollView Orientation="Vertical"
-                    Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="3">
+                    Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="3">
                 <Label x:Name="ResultsLabel" 
                        Text="{Binding StringNumList}" />
             </ScrollView>

@@ -18,12 +18,15 @@ namespace randoGenNum.ViewModels
 
         private string _randNum1;
         private string _randNum2;
+        private string _numRolls;
+
         private List<int> _randNumList;
         private string _stringNumList;
         private string _errorMessage;
 
         private string _EntryColor1;
         private string _EntryColor2;
+        private string _EntryColor3;
 
         /* Input: Name: value       , type: string
         * Output: Name: _randNum1, type: string
@@ -117,6 +120,35 @@ namespace randoGenNum.ViewModels
                 _EntryColor2 = value;
                 OnPropertyChanged();
             }
+
+        }
+
+
+
+
+
+        public string NumRolls
+        {
+            get { return _numRolls; }
+            set
+            {
+                BGColor3 = "Transparent";
+                ErrorMessage = "";
+                _numRolls = value;
+                OnPropertyChanged();
+            }
+
+        }
+
+        public string BGColor3
+        {
+            get { return _EntryColor3; }
+            set
+            {
+                _EntryColor3 = value;
+                OnPropertyChanged();
+            }
+
         }
 
         /* Input:  Name: value       , type: List<int>
@@ -129,6 +161,8 @@ namespace randoGenNum.ViewModels
          *        and this function will update the element 
          *        binded to this attribute.
          */
+
+
 
         public List<int> RandNumList
         {
@@ -181,6 +215,8 @@ namespace randoGenNum.ViewModels
                 OnPropertyChanged();
             }
         }
+
+        
         /* Input: N/A
         * Output: Name: StringNumList, type: string
         *         Name: RandNumList  , type: List<int>
@@ -207,24 +243,32 @@ namespace randoGenNum.ViewModels
                     
                     if (GetValidation(_randNum1) && GetValidation(_randNum2))
                     {
+                        
+
                         int tempNum1 = 0;
                         int tempNum2 = 0;
+                        int tempNumRoll = 0;
 
-                        if ((Int32.TryParse(_randNum1, out tempNum1)) && Int32.TryParse(_randNum2, out tempNum2))
+                        if (Int32.TryParse(_randNum1, out tempNum1) && Int32.TryParse(_randNum2, out tempNum2) && Int32.TryParse(_numRolls, out tempNumRoll))
                         {
-                            if(tempNum1 > tempNum2)
+                            if (tempNum1 > tempNum2)
                             {
                                 int tempNum = tempNum1;
                                 tempNum1 = tempNum2;
                                 tempNum2 = tempNum;
                             }
 
+                            if (tempNumRoll < 1)
+                            {
+                                DisplayErrors();
+                            }
+
                             Random r = new Random();
-                            int arraySize = r.Next(100, 500);
+                            //int arraySize = r.Next(100, 500);
 
                             var randNumArray = new List<int>();
 
-                            for (int i = 0; i < arraySize; i++)
+                            for (int i = 0; i < tempNumRoll; i++)
                             {
                                 int temp = r.Next(tempNum1, tempNum2);
                                 randNumArray.Add(temp);
@@ -239,6 +283,8 @@ namespace randoGenNum.ViewModels
                             DisplayErrors();
                         }
 
+                        
+
                     }
                     else
                     {
@@ -247,6 +293,8 @@ namespace randoGenNum.ViewModels
                 });
             }
         }
+
+
 
         /* Input: N/A
         * Output: Name: BGColor1     , type: string
@@ -262,6 +310,8 @@ namespace randoGenNum.ViewModels
         */
         private void DisplayErrors()
         {
+            int tempPosNum = 0;
+
             if (!(GetValidation(_randNum1)))
             {
                 BGColor1 = "Red";
@@ -278,6 +328,25 @@ namespace randoGenNum.ViewModels
             else
             {
                 BGColor2 = "Transparent";
+            }
+
+            
+            if (Int32.TryParse(_numRolls, out tempPosNum))
+            {
+                if (tempPosNum < 1)
+                {
+                    BGColor3 = "Red";
+                }
+                else
+                {
+                    BGColor3 = "Transparent";
+                }
+
+
+            }
+            else
+            {
+                BGColor3 = "Transparent";
             }
 
             ErrorMessage = "Invalid value(s). Please type in integers.";
